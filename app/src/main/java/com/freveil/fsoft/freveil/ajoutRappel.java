@@ -39,6 +39,10 @@ public class ajoutRappel extends AppCompatActivity {
         }
 
         settings = getSharedPreferences("FPref", 0);
+        String adresseIp = settings.getString("adresseIp", "");
+        String port = settings.getString("port", "");
+        Communication.changeServeur(adresseIp,port);
+
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean("modifie", false);
         editor.commit();

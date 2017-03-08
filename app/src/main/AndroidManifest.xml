@@ -32,7 +32,8 @@
         <activity android:name=".suppressionCommande" />
         <activity android:name=".modifierCommande" />
         <activity android:name=".supprimeRappel" />
-        <activity android:name=".modifieRappel"></activity>
+        <activity android:name=".modifieRappel" />
+        <activity android:name=".Configuration"></activity>
     </application>
 
 </manifest>

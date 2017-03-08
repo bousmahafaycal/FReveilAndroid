@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener listenerbouton2 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent (MainActivity.this , MenuReveil.class);
+            Intent intent = new Intent (MainActivity.this , Configuration.class);
             startActivity(intent) ;
         }
 

@@ -1,6 +1,7 @@
 package com.freveil.fsoft.freveil;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,12 @@ public class modifieRappel extends AppCompatActivity {
         Button bouton2 = null;
         bouton2 = (Button)findViewById(R.id.button2);
         bouton2.setOnClickListener(  listenerbouton2  );
+
+        SharedPreferences settings;
+        settings = getSharedPreferences("FPref", 0);
+        String adresseIp = settings.getString("adresseIp", "");
+        String port = settings.getString("port", "");
+        Communication.changeServeur(adresseIp,port);
 
 
 

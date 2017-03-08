@@ -2,6 +2,7 @@ package com.freveil.fsoft.freveil;
 
 import android.app.Application;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +48,11 @@ public class supprimeRappel extends AppCompatActivity {
         Rappel r = new Rappel();
         Communication.envoieCommande("<c>getRappelJournalier</c>");
 
+        SharedPreferences settings;
+        settings = getSharedPreferences("FPref", 0);
+        String adresseIp = settings.getString("adresseIp", "");
+        String port = settings.getString("port", "");
+        Communication.changeServeur(adresseIp,port);
 
         Thread ta;
 
