@@ -1,5 +1,5 @@
 # FReveilAndroid
-Application Android permettant de gérer le FReveil créé par Fayçal Bousmaha.
+Application Android créée par Fayçal Bousmaha permettant de gérer le FReveil.
 
 ## Introduction
 ### Le concept
