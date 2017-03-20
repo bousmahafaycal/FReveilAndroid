@@ -162,6 +162,7 @@ public class Communication {
         ta.start();
         try{
             ta.join();
+            ta.stop();
         }catch (Exception e){
 
         }

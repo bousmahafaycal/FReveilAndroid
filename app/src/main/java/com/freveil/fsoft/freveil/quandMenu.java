@@ -151,6 +151,9 @@ public class quandMenu extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
+            Toast toast= Toast.makeText(quandMenu.this,"Fonctionnalité pas encore dévelopée !",Toast.LENGTH_SHORT);
+            toast.show();
+
             /*Intent intent = new Intent (quandMenu.this , suppressionCommande.class);
             intent.putExtra("rappel",r.toString());
             startActivity(intent) ;*/

@@ -19,6 +19,8 @@ public class Configuration extends AppCompatActivity {
     SharedPreferences settings;
     String chaine = "";
     boolean afficher = true;
+    Thread ta;
+    boolean continuer = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class Configuration extends AppCompatActivity {
         String port = settings.getString("port", "");
         Communication.changeServeur(adresseIp,port);
 
-        Thread ta;
+
 
 
         ta =new Thread(new Runnable() {
@@ -49,7 +51,7 @@ public class Configuration extends AppCompatActivity {
 
 
 
-                while (true){
+                while (continuer){
                     Communication.envoieCommande(Communication.createCommande("getPresence",""));
                     chaine = Communication.getResponse();
                     Communication.envoieCommande(Communication.createCommande("getBouton",""));
@@ -76,18 +78,40 @@ public class Configuration extends AppCompatActivity {
                         }});
 
                     try {
-                        Thread.sleep(10000);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
+
             }
         });
 
 
-        ta.start();
+
 
     }
+
+
+    protected  void onResume(){
+        super.onResume();
+        ta.start();
+    }
+
+    @Override
+    protected   void onPause(){
+        try{
+            continuer = false;
+            ta.stop();
+
+        }catch (Exception e){
+
+        }
+
+        super.onPause();
+
+    }
+
 
 
 

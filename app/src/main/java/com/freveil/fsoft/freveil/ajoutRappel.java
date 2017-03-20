@@ -96,21 +96,42 @@ public class ajoutRappel extends AppCompatActivity {
             //Bouton du dialogue
             monDialogue.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
+                    Toast toast= Toast.makeText(ajoutRappel.this,"Rappel ajouté !",Toast.LENGTH_LONG);
                     if (r.isARappel()){
                         Communication.envoieCommande(Communication.createCommande("ajoutRappel",r.toString()));
-                        Toast toast= Toast.makeText(ajoutRappel.this,"Rappel ajouté !",Toast.LENGTH_LONG);
+
+
+                        if (Communication.getResponse().equals("1")){
+                            toast.show();
+                            retournerMenuReveil();
+                        }else {
+                            toast= Toast.makeText(ajoutRappel.this,"Ajout de rappel annulé !",Toast.LENGTH_LONG);
+                            toast.show();
+
+                        }
+
+                    }else {
+                        toast= Toast.makeText(ajoutRappel.this,"Ajout de rappel annulé, heure du réveil non défini ou aucune commannde ajoutée !",Toast.LENGTH_LONG);
                         toast.show();
-                        retournerMenuReveil();
                     }
 
 
 
                 }
             });
-            monDialogue.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+
+            monDialogue.setNeutralButton("Annuler", new DialogInterface.OnClickListener() {
 
                 public void onClick(DialogInterface dialog, int which) {
                     Toast toast = Toast.makeText(ajoutRappel.this, "Ajout de rappel annulé !", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            });
+
+            monDialogue.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast toast = Toast.makeText(ajoutRappel.this, "Rappel non sauvegardé !", Toast.LENGTH_LONG);
                     toast.show();
                     retournerMenuReveil();
 

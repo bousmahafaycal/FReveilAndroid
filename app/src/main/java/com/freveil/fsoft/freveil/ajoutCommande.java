@@ -41,7 +41,7 @@ public class ajoutCommande extends AppCompatActivity {
 
         eid = (EditText)findViewById(R.id.editText);
         eid.addTextChangedListener(textWatcher);
-        isModifie = "b";
+        settings = getSharedPreferences("FPref", 0);
         Intent intent2 = getIntent();
         if (intent2 != null){
             try{
@@ -75,13 +75,13 @@ public class ajoutCommande extends AppCompatActivity {
         bouton2.setOnClickListener(  listenerbouton2  );
 
         // NORMALEMENT : communiquation serveur et récuperation
-        //Communication.envoieCommande(Communication.createCommande("getCommande",r.toString()));
-        //listeCommande = Communication.getArrayListResponse();
-        listeCommande.add("musique");
+        Communication.envoieCommande(Communication.createCommande("getCommande",r.toString()));
+        listeCommande = Communication.getArrayListResponse();
+        /*listeCommande.add("musique");
         listeCommande.add("citation");
         listeCommande.add("synthese");
         listeCommande.add("synthese_heure");
-        listeCommande.add("synthese_meteo");
+        listeCommande.add("synthese_meteo");*/
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, listeCommande);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -136,7 +136,7 @@ public class ajoutCommande extends AppCompatActivity {
             Toast toast= Toast.makeText(ajoutCommande.this,"Ajout de commande annulé",Toast.LENGTH_LONG);
             toast.show();
 
-            if (isModifie.equals("a"))
+            if (settings.getBoolean("modifie", false))
                 intent = new Intent (ajoutCommande.this , modificationRappel.class);
             intent.putExtra("rappel",r.toString());
             startActivity(intent) ;
@@ -169,8 +169,9 @@ public class ajoutCommande extends AppCompatActivity {
                     EditText ed1;
                     for (int i = 0; i < a-size;i++){
                         id1 = new TextView(getBaseContext());
-                        ed1 = new EditText(getBaseContext());
+                        ed1 = new EditText(eid.getContext());
                         ed1.setTextColor(Color.BLACK);
+                        ed1.setVisibility(View.VISIBLE);
                         id1.setText("Donnez l'argument n°"+(size+i+1));
                         listeText.add(id1);
                         ed1.setPadding(0,0,0,20);

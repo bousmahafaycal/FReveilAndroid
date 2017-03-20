@@ -50,8 +50,8 @@ public class MenuReveil extends AppCompatActivity {
     private View.OnClickListener listenerbouton2 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent (MenuReveil.this , MainActivity.class);
-            startActivity(intent) ;
+            Toast toast= Toast.makeText(MenuReveil.this,"Fonctionnalité pas encore dévelopée !",Toast.LENGTH_SHORT);
+            toast.show();
         }
 
     };

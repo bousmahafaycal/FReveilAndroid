@@ -140,6 +140,17 @@ public class modifierCommande extends AppCompatActivity {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(adapter);
 
+            ArrayList<String> liste = new ArrayList<String> ();
+            int lon = r.part1.size();
+            if (!part1)
+                lon = r.part2.size();
+            for (int i = 0; i < lon; i++){
+                liste.add(String.valueOf(i+1));
+            }
+            adapter = new ArrayAdapter(ra.getContext(), android.R.layout.simple_spinner_item, liste);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner2.setAdapter(adapter);
+
         }
     };
 }
