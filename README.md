@@ -65,6 +65,8 @@ supprimer les rappels facilement.
 
 ## Captures d'écran
 ### Première capture
-
+<img src="http://i.imgur.com/PquQRUY.png"  width="300"></img>
 ### Seconde capture
-
+<img src="http://i.imgur.com/we9dQQP.png"  width="300"></img>
+### Troisième capture
+<img src="http://i.imgur.com/tI2Qz2N.png"  width="300"></img>
