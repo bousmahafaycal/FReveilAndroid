@@ -4,7 +4,8 @@ Application Android créée par Fayçal Bousmaha permettant de gérer le FReveil
 ## Introduction
 ### Le concept
 Cette application Android a été conçue pour gérer le FReveil (<https://github.com/bousmahafaycal/FReveil>). 
-Cette application permet, sans être connecté sur le serveur, de gérer les rappels.
+Cette application permet, sans être connecté sur le serveur, de gérer les rappels si le FReveil est disponible sur le même réseau
+local que l'application.  
 En effet, grâce à elle, on peut ajouter/modifier/supprimer des rappels. 
 Elle devient quasiment indispensable lorsque le serveur est placé sur un Raspberry Pi (un micro ordinateur pas cher) sans écran par exemple.
 Aisni, plus besoin de se connecter en SSH sur le serveur afin de gérer ses rappels.
@@ -48,6 +49,9 @@ On peut ensuite facilement ajouter son module au FReveil.
 Afin de tester cette application, vous devez disposé d'Android Studio. 
 Après avoir cloné ce projet sur votre disque dur, vous pourrez l'ouvrir avec Android Studio.
 Une fois ouvert, vous pourrez appuyez sur la flèche verte (Run) afin de la lancer sur un émulateur ou sur un de vos appareils.
+
+
+On doit tout d'abord entrer l'adresse ip et le port du serveur (12800 par défaut). Cela étant fait, on peut soit gérer la configuration du FReveil, soit ajouter/modifier/supprimer un rappel.
 
 
 ## A améliorer
