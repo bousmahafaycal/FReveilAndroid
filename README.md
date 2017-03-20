@@ -51,7 +51,7 @@ Après avoir cloné ce projet sur votre disque dur, vous pourrez l'ouvrir avec A
 Une fois ouvert, vous pourrez appuyez sur la flèche verte (Run) afin de la lancer sur un émulateur ou sur un de vos appareils.
 
 
-On doit tout d'abord entrer l'adresse ip et le port du serveur (12800 par défaut). Cela étant fait, on peut soit gérer la configuration du FReveil, soit ajouter/modifier/supprimer un rappel.
+On doit tout d'abord entrer l'adresse ip et le port du serveur (12800 par défaut) puis appyer sur le bouton connexion. Cela étant fait, on peut soit gérer la configuration du FReveil, soit ajouter/modifier/supprimer un rappel.
 
 
 ## A améliorer
