@@ -55,8 +55,6 @@ On doit tout d'abord entrer l'adresse ip et le port du serveur (12800 par défau
 
 
 ## A améliorer
-- Arreter tous les thread à chaque fois que l'activité est détruite.
-- Message d'erreur si le serveur refuse d'ajouter un rappel (par exemple parce qu'il y a déja un rappel existant).
 - Sécurisation : Crypter les échanges serait une bonne idée afin d'éviter que quelqu'un s'introduisant dans le réseau local puisse
 supprimer les rappels facilement.
 - Créer mon propre log de l'application Android afin de savoir tout ce qu'elle a fait et les raisons d'un bug si il y en a un.
